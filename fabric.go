@@ -64,3 +64,12 @@ func get(stub shim.ChaincodeStubInterface, args []string) (string, error) {
 	}
 	return string(value), nil
 }
+
+func main() {
+	err := shim.Start(new(SampleChaincode))
+	if err != nil {
+		fmt.Println("Could not start SampleChaincode")
+	} else {
+		fmt.Println("SampleChaincode successfully started.")
+	}
+}
